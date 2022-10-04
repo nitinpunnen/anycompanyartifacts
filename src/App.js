@@ -1,31 +1,56 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import "./App.css";
 import Header from './components/Header/Header';
 import "@aws-amplify/ui-react/styles.css";
-import { API, Storage } from 'aws-amplify';
 import {
-    Button,
-    Flex,
-    Heading,
-    Image,
-    Text,
-    TextField,
+    Flex, Heading,
     View,
     withAuthenticator,
 } from '@aws-amplify/ui-react';
-import { listNotes } from "./graphql/queries";
-import {
-    createNote as createNoteMutation,
-    deleteNote as deleteNoteMutation,
-} from "./graphql/mutations";
-import UploadFiles from "./components/UploadFiles/UploadFiles";
 
-const App = ({ signOut }) => {
+import UploadFiles from "./components/UploadFiles/UploadFiles";
+import {BrowserRouter, Link, Route, Routes} from "react-router-dom";
+import SearchDocuments from "./components/SearchDocuments/SearchDocuments";
+import Home from "./components/Home/Home";
+import logoUrl from "./assets/logo.PNG";
+import GraphSearch from "./components/GraphSearch/GraphSearch";
+
+const App = ({signOut}) => {
 
     return (
         <View className="App">
-            <Header/>
-            <UploadFiles/>
+            {/*<Header/>*/}
+            <BrowserRouter>
+                <Flex direction="column" width="100%" padding="5px 10px" style={{borderBottom: "1px solid lightgrey", boxShadow: "0 4px 5px lightgrey"}}>
+                    <Flex
+                        direction={{base: 'row', large: 'row'}}
+                        width="100%"
+                        style={{alignItems: "center"}}
+                    >
+                        <img src={logoUrl} alt="AnyCompany"/>
+                        <Heading level={4} style={{flexGrow: 3, textAlign: "right"}}>Artifact Store</Heading>
+
+                    </Flex>
+                    <Flex
+                        direction={{base: 'row', large: 'row'}}
+                        width="100%"
+                        style={{alignItems: "center"}}
+                    >
+                        <Link className="Navbar-Item" to="/">Home</Link>
+                        <Link className="Navbar-Item" to="/uploadFiles">Upload Files</Link>
+                        <Link className="Navbar-Item" to="/searchDocs">Search Documents</Link>
+                        <Link className="Navbar-Item" to="/searchEntities">Find Entities</Link>
+                    </Flex>
+                </Flex>
+                <Routes>
+                    <Route exact path="/" element={<Home/>}/>
+                    <Route exact path="/searchDocs" element={<SearchDocuments/>}/>
+                    <Route exact path="/uploadFiles" element={<UploadFiles/>}/>
+                    <Route exact path="/searchEntities" element={<GraphSearch/>}/>
+                </Routes>
+            </BrowserRouter>
+            {/*<Home/>*/}
+            {/*<UploadFiles/>*/}
         </View>
     );
 };

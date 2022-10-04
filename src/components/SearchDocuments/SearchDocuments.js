@@ -1,5 +1,5 @@
 import React from 'react';
-import './Header.css';
+import './SearchDocuments.css';
 import {Flex, Text} from "@aws-amplify/ui-react";
 const SearchDocuments = () => (
     <Flex
