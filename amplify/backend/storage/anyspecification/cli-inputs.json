@@ -1,0 +1,14 @@
+{
+  "resourceName": "anyspecification",
+  "policyUUID": "4d56beee",
+  "bucketName": "nitinpunnen-anycompanyartifacts",
+  "storageAccess": "auth",
+  "guestAccess": [],
+  "authAccess": [
+    "CREATE_AND_UPDATE",
+    "READ",
+    "DELETE"
+  ],
+  "triggerFunction": "NONE",
+  "groupAccess": {}
+}
