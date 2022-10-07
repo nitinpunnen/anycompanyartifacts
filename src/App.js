@@ -1,6 +1,5 @@
 import React from "react";
 import "./App.css";
-import Header from './components/Header/Header';
 import "@aws-amplify/ui-react/styles.css";
 import {
     Flex, Heading,
@@ -27,14 +26,14 @@ const App = ({signOut}) => {
                         width="100%"
                         style={{alignItems: "center"}}
                     >
-                        <img src={logoUrl} alt="AnyCompany"/>
+                        <img className="Logo" src={logoUrl} alt="AnyCompany"/>
                         <Heading level={4} style={{flexGrow: 3, textAlign: "right"}}>Artifact Store</Heading>
 
                     </Flex>
                     <Flex
                         direction={{base: 'row', large: 'row'}}
-                        width="100%"
-                        style={{alignItems: "center"}}
+                        width="90%"
+                        style={{alignItems: "center", margin: "0 auto"}}
                     >
                         <Link className="Navbar-Item" to="/">Home</Link>
                         <Link className="Navbar-Item" to="/uploadFiles">Upload Files</Link>
