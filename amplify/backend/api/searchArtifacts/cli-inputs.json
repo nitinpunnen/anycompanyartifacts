@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "paths": {
+    "/search/kendra": {
+      "name": "/search/kendra",
+      "lambdaFunction": "artifactStoreSearchKendra",
+      "permissions": {
+        "setting": "open"
+      }
+    },
+    "/search/neptune": {
+      "name": "/search/neptune",
+      "lambdaFunction": "artifactStoreSearchNeptune",
+      "permissions": {
+        "setting": "open"
+      }
+    }
+  }
+}

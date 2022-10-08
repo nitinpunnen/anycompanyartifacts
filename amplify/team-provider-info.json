@@ -14,6 +14,20 @@
     "categories": {
       "auth": {
         "anycompanyartifacts418ed585": {}
+      },
+      "function": {
+        "testFunction": {
+          "deploymentBucketName": "amplify-anycompanyartifacts-dev-190440-deployment",
+          "s3Key": "amplify-builds/testFunction-734d3176753336397650-build.zip"
+        },
+        "artifactStoreSearchKendra": {
+          "deploymentBucketName": "amplify-anycompanyartifacts-dev-190440-deployment",
+          "s3Key": "amplify-builds/artifactStoreSearchKendra-43333743647666515130-build.zip"
+        },
+        "artifactStoreSearchNeptune": {
+          "deploymentBucketName": "amplify-anycompanyartifacts-dev-190440-deployment",
+          "s3Key": "amplify-builds/artifactStoreSearchNeptune-397734382f3271384536-build.zip"
+        }
       }
     }
   }
